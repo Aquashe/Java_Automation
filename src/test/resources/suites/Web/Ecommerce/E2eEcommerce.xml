@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="E2e Ecommerce">
+
+    <listeners>
+        <listener class-name="com.thomas.listeners.TestListener"/>
+    </listeners>
+
+    <test name="Ecommerce End to End">
+        <classes>
+            <class name="com.thomas.web.pages.ecommerce.E2eEcommerceTest">
+                <methods>
+                    <include name="testCheckoutFlowWithMultipleProducts"/>
+                    <include name="checkProductInOrders"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
