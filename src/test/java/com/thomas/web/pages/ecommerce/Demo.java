@@ -15,15 +15,23 @@ public class Demo {
     @Test
     public void demo(){
 
-       String excelPath = System.getProperty("user.dir")+"\\src\\test\\resources\\testData\\excel\\StudentData.xlsx";
-       String sheetName = "StudentDetails";
-       String columnName = "Name";
-       List<String> columnNames = List.of("Name", "Age", "Gender");
-        Map<String, List<Object>> data = Map.of(
-                "BookName", List.of("Aryabhataa", "Shushruthi", "Ranghan", "Avehsam", "Fahad"),
-                "Author", List.of("raman", "Setha", "Munni", "Parichayam", "Neha"),
-                "Count", List.of(12, 12, 32, 12, 21));
+       String excelPath =
+               System.getProperty("user.dir")+"\\src\\test\\resources\\testData\\excel\\StudentData.xlsx";
+       String sheetName = "LibraryDetails";
+       String columnName = "BookName";
+       Map<String, List<Object>> data = DataDriven.getExcelSheetDetailsWithColumnAsHeader(
+               excelPath,sheetName, List.of("Count", "BookName", "Author"));
+       for(String key : data.keySet())
+           System.out.println(key+" : "+data.get(key));
 
-        DataDriven.createExcelWithColumnAsHeaderFromMap(excelPath, "LibraryDetails", data);
+       DataDriven.editCellWithColumnNameAndRowIndex(
+               excelPath, sheetName, 3,  "BookName", "paripari");
+
+        Map<String, List<Object>> data2 = DataDriven.getExcelSheetDetailsWithColumnAsHeader(
+                excelPath,sheetName, List.of("Count", "BookName", "Author"));
+        for(String key : data2.keySet())
+            System.out.println(key+" : "+data2.get(key));
+
+
     }
 }
