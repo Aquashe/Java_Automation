@@ -1,5 +1,7 @@
 package com.thomas.web.pages.uploadAndDownload;
 
+import com.thomas.pojo.excel.model.CellDetails;
+import com.thomas.utils.DataDriven;
 import com.thomas.utils.WaitHelper;
 import io.opentelemetry.api.internal.StringUtils;
 import org.openqa.selenium.By;
@@ -58,8 +60,11 @@ public class UploadAndDownloadPage {
         waitHelper.waitForElementTobeInvisible(textSuccessPopup);
     }
 
-    public void editExcelData(){
+    public void editExcelData(String excelPath, String sheetName, String columName, String cellName, String valueToEdit){
+        CellDetails cellDetails = DataDriven.getDetailsOfCell(excelPath, sheetName, cellName);
 
+        DataDriven.editCellWithColumnNameAndRowIndex(
+                excelPath, sheetName, cellDetails.rowIndex,  columName, valueToEdit);
     }
 
     public void retreiveFruitData(String fruitName, String columName, String expectedData){

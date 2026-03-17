@@ -41,7 +41,7 @@
             return sheet;
         }
 
-        private static CellDetails getDetailsOfCell(String excelPath, String sheetName, String columnName){
+        public static CellDetails getDetailsOfCell(String excelPath, String sheetName, String columnName){
             XSSFSheet sheet= fetchSheetDataFromExcel(excelPath, sheetName);
             log.info("Getting ColumnInformation from Sheet : {}  for Column : {}",sheetName, columnName);
             for(Row row : sheet){
