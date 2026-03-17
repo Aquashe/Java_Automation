@@ -13,7 +13,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class HomePage {
+public class AngularHomePage {
 
 
     public static void addProduct(WebDriver driver, String vegetableName) throws InterruptedException {

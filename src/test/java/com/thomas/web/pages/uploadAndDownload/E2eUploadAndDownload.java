@@ -10,10 +10,18 @@ public class E2eUploadAndDownload extends BaseTest {
     public void performE2eUploadAndDownload(){
         launchApplication("https://rahulshettyacademy.com/upload-download-test/");
 
+        String fruitName = "Apple";
+        String columnNameTocheck = "Price";
+        String columnValueToChange = "390";
+
         UploadAndDownloadPage uploadAndDownloadPage = new UploadAndDownloadPage(driver);
+
+        uploadAndDownloadPage.editExcelData(filePath, "Sheet1", columnNameTocheck, fruitName, columnValueToChange);
+
         uploadAndDownloadPage.performUploadAndDownloadPage(false, filePath,
                 true, "Updated Excel Data Successfully.");
-        uploadAndDownloadPage.retreiveFruitData("Apple","Price","345");
+
+        uploadAndDownloadPage.retreiveFruitData(fruitName, columnNameTocheck, columnValueToChange);
     }
 
 }
