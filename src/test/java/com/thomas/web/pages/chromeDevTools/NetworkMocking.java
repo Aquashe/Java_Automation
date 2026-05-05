@@ -2,10 +2,10 @@ package com.thomas.web.pages.chromeDevTools;
 
 import com.thomas.web.base.CDP_BaseTest;
 import com.thomas.web.pages.angularApp.AngularHomePage;
-import org.openqa.selenium.devtools.v142.fetch.Fetch;
-import org.openqa.selenium.devtools.v142.fetch.model.RequestPattern;
-import org.openqa.selenium.devtools.v142.network.model.ErrorReason;
-import org.openqa.selenium.devtools.v142.network.model.Request;
+import org.openqa.selenium.devtools.v143.fetch.Fetch;
+import org.openqa.selenium.devtools.v143.fetch.model.RequestPattern;
+import org.openqa.selenium.devtools.v143.network.model.ErrorReason;
+import org.openqa.selenium.devtools.v143.network.model.Request;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ public class NetworkMocking extends CDP_BaseTest {
 
         AngularHomePage angularHomePage = new AngularHomePage(driver);
         angularHomePage.performHomePage(false, false,
-                false, true, false);
+                false, true, false, false, false);
 
         Thread.sleep(30000);
     }
@@ -56,7 +56,7 @@ public class NetworkMocking extends CDP_BaseTest {
 
         AngularHomePage angularHomePage = new AngularHomePage(driver);
         angularHomePage.performHomePage(false, false,
-                false, true, false);
+                false, true, false, false , false);
 
         Thread.sleep(30000);
     }
