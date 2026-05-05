@@ -1,9 +1,9 @@
 package com.thomas.web.pages.chromeDevTools;
 
 import com.thomas.web.base.CDP_BaseTest;
-import org.openqa.selenium.devtools.v142.network.model.Request;
-import org.openqa.selenium.devtools.v142.network.model.Response;
-import org.openqa.selenium.devtools.v142.network.Network;
+import org.openqa.selenium.devtools.v143.network.model.Request;
+import org.openqa.selenium.devtools.v143.network.model.Response;
+import org.openqa.selenium.devtools.v143.network.Network;
 import org.testng.annotations.Test;
 
 import java.util.Optional;

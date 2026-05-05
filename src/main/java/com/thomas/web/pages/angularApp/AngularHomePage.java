@@ -32,6 +32,12 @@ public class AngularHomePage {
 
     @FindBy(xpath = "//a[contains(text(), 'Cart')]")
     private WebElement buttonCart;
+
+    @FindBy(xpath = "//a[contains(text(), 'Browse Products')]")
+    private WebElement buttonBrowseProducts;
+
+    @FindBy(xpath = "//button[contains(text(), 'Virtual Library')]")
+    private WebElement buttonVirtualLibrary;
     // REGION : END
 
     // REGION : PAGE METHODS
@@ -59,12 +65,24 @@ public class AngularHomePage {
         buttonCart.sendKeys(Keys.ENTER);
     }
 
+    public void clickButtonBrowseProducts(){
+        waitHelper.waitForElementTobeVisible(buttonBrowseProducts);
+        buttonBrowseProducts.sendKeys(Keys.ENTER);
+    }
+
+    public void clickButtonVirtualLibrary(){
+        waitHelper.waitForElementTobeVisible(buttonVirtualLibrary);
+        buttonVirtualLibrary.sendKeys(Keys.ENTER);
+    }
+
     public void performHomePage(
             boolean clickNavbar,
             boolean clickRahulShettyAcademy,
             boolean clickProducts,
             boolean clickLibrary,
-            boolean clickCart){
+            boolean clickCart,
+            boolean clickBrowseProducts,
+            boolean clickVirtualLibrary){
 
         if(clickNavbar)
             this.clickButtonNavbar();
@@ -76,6 +94,10 @@ public class AngularHomePage {
             this.clickButtonLibrary();
         if(clickCart)
             this.clickButtonCart();
+        if(clickBrowseProducts)
+            this.clickButtonBrowseProducts();
+        if(clickVirtualLibrary)
+            this.clickButtonVirtualLibrary();
     }
     // REGION : END
 }

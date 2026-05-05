@@ -2,7 +2,7 @@ package com.thomas.web.pages.chromeDevTools;
 
 import com.thomas.web.base.CDP_BaseTest;
 import com.thomas.web.pages.angularApp.AngularHomePage;
-import org.openqa.selenium.devtools.v142.emulation.Emulation;
+import org.openqa.selenium.devtools.v143.emulation.Emulation;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -11,6 +11,9 @@ import java.util.Optional;
 
 public class MobileEmulatorTest extends CDP_BaseTest {
 
+    /**
+     * Setting the device the Size and width
+     */
     @Test(enabled = false)
     public void throughSeleniumCdpCommand() {
         devTools.send(Emulation.setDeviceMetricsOverride(600, 1000, 50, true,
@@ -23,7 +26,7 @@ public class MobileEmulatorTest extends CDP_BaseTest {
 
         AngularHomePage angularHomePage = new AngularHomePage(driver);
         angularHomePage.performHomePage(true, false,
-                false, true, false);
+                false, true, false,false, false);
     }
 
     @Test()
@@ -40,7 +43,7 @@ public class MobileEmulatorTest extends CDP_BaseTest {
 
         AngularHomePage angularHomePage = new AngularHomePage(driver);
         angularHomePage.performHomePage(true, false,
-                false, true, false);
+                false, true, false, false, false);
     }
 
 
